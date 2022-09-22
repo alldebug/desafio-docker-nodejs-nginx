@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+
+  </p>
+    <p>
+      <h1><%= title %></h1>
+    </p>
+  <p> 
+
+  </p>
+    <p>- Lista de nomes cadastrada no banco de dados.</p>
+    <ul>
+      <% people = people.map(function(elem) {
+        return '<li>' + elem.name + '</li>';
+    }) -%>
+    <p><%- people.join("") %></p>
+    </ul>
+  <p> 
+</html>
