@@ -42,9 +42,10 @@ app.use(async (req, res, next) => {
 app.get('/',async (req,res) =>{
   const connection = mysql.createConnection(config);
   const query = util.promisify(connection.query).bind(connection);
-  const sql = `SELECT * FROM people`;
+  const sql = `SELECT name FROM people`;
   try {
     const people = await query(sql);
+    console.log(people)
     res.render('index',{
       title:'Full Cycle Rocks!',
       people,
